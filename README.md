@@ -90,5 +90,3 @@ We welcome contributions! Feel free to fork the repository, create new features,
 This library is open-source and licensed under the MIT License.  
 
 --- 
-
-Would you like to link the repository for issues and pull requests in the "Contributing" section?
