@@ -135,4 +135,3 @@ app.mount('#app');
 
 ---
 
-Let me know if you want any additional features for this example!
