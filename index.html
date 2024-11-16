@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WinDiscordUI Docs</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.0/dist/full.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-html.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .windows-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+    }
+
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap: 20px;
+    }
+
+    /* New Styles for More Legible UI */
+    .hero-section {
+      background: linear-gradient(to bottom, #0078D7, #005A9E);
+      padding: 60px 0;
+      text-align: center;
+    }
+
+    .hero-text {
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .feature-icon {
+      color: #0078D7;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .example-slider .swiper-slide img {
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .content-section {
+      display: none;
+    }
+
+    .content-section.active {
+      display: block;
+    }
+
+    /* Modal Styling */
+    .modal-button {
+      background-color: #0078D7;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .modal-button:hover {
+      background-color: #005A9E;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="bg-blue-500 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <a href="#" class="text-white text-2xl font-bold">WinDiscordUI</a>
+      <ul class="flex space-x-4">
+        <li><a href="#" data-target="getting-started" class="text-white hover:underline nav-link">Getting Started</a></li>
+        <li><a href="#" data-target="file-tree" class="text-white hover:underline nav-link">File Tree</a></li>
+        <li><a href="#" data-target="file-contents" class="text-white hover:underline nav-link">File Contents</a></li>
+        <li><a href="#" data-target="instructions" class="text-white hover:underline nav-link">Instructions</a></li>
+        <li><a href="#" data-target="examples" class="text-white hover:underline nav-link">Examples</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section text-white">
+    <div class="container mx-auto">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4 hero-text">Build Windows-Inspired Discord UIs</h1>
+      <p class="text-xl md:text-2xl mb-8 hero-text">Effortlessly create beautiful and customizable Discord interfaces with WinDiscordUI.</p>
+      <a href="#getting-started" class="modal-button">Get Started</a>
+    </div>
+  </section>
+
+  <!-- Content Sections  -->
+  <section id="getting-started" class="content-section container mx-auto py-12">
+    <h2 class="section-title">Getting Started</h2>
+    <p class="text-lg mb-8">This library provides a quick, easy way to build a Discord UI in the style that is similar to older versions of Microsoft Windows.</p>
+    <pre><code class="language-bash">npm install discord-windows-emulator</code></pre>
+    <p class="text-lg mb-8">Then, import the CSS file:</p>
+    <pre><code class="language-javascript">import 'discord-windows-emulator/dist/style.css';</code></pre>
+  </section>
+
+  <section id="file-tree" class="content-section container mx-auto py-12">
+    <h2 class="section-title">File Tree</h2>
+    <pre><code class="language-text">discord-windows-emulator-example/
+├── public/
+│   ├── index.html
+├── src/
+│   ├── components/
+│   │   └── WelcomeDialog.vue
+│   ├── App.vue
+│   ├── main.js
+├── package.json
+└── README.md</code></pre>
+  </section>
+
+  <section id="file-contents" class="content-section container mx-auto py-12">
+    <h2 class="section-title">File Contents</h2>
+    <h3><code>public/index.html</code></h3>
+    <pre><code class="language-html">
+<title>Discord Windows Emulator Example</title>
+<div id="app"></div>
+</code></pre>
+
+    <h3><code>src/App.vue</code></h3>
+    <pre><code class="language-html">
+<template>
+  <div>
+    <h1>Discord Windows Emulator</h1>
+  </div>
+</template>
+</code></pre>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white p-6 text-center mt-8">
+    <div class="container mx-auto">
+      <p>&copy; 2023 WinDiscordUI. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // SwiperJS Initialization
+    const swiper = new Swiper('.swiper', {
+      pagination: {
+        el: '.swiper-pagination',
+      },
+      loop: true,
+      autoplay: {
+        delay: 3000,
+      },
+    });
+
+    // ScrollReveal Animation
+    ScrollReveal().reveal('.section-title', { duration: 1000 });
+    ScrollReveal().reveal('.card-container', { duration: 1000, delay: 200 });
+
+    // GSAP Animation
+    gsap.fromTo(".hero-text", { opacity: 0, y: 50 }, { opacity: 1, y: 0, duration: 1, delay: 0.5 });
+
+    // Navbar Link Click Handler
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('.content-section');
+
+    navLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        const target = link.getAttribute('data-target');
+        sections.forEach(section => {
+          section.classList.remove('active');
+          if (section.id === target) {
+            section.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+
+</html>
