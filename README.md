@@ -1,6 +1,6 @@
 # WinDiscordUI
 
-[![Showcase](https://img.youtube.com/vi/TTLLMlUsw3U/0.jpg)](https://www.youtube.com/shorts?v=TTLLMlUsw3U)
+[![Showcase](https://img.youtube.com/vi/TTLLMlUsw3U/0.jpg)](https://www.youtube.com/watch?v=TTLLMlUsw3U)
 
 A Vue.js library for creating Discord interfaces that emulate the look and feel of various Windows versions. Perfect for creating nostalgic and engaging user experiences in Discord bot interfaces or standalone apps.  
 
