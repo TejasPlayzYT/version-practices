@@ -1,4 +1,4 @@
-# Discord Windows Emulator Library  
+# WinDiscordUI
 
 ![alt text](https://github.com/TejasPlayzYT/version-practices/blob/main/vertise)
 
